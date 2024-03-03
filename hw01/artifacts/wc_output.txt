@@ -1,0 +1,4 @@
+   415	  1322	  7347	./artifacts/Istoria_Gosudarstva_Rossiyskogo.txt
+   415	  1737	 10252	./artifacts/nl_output.txt
+    23	    74	   495	./artifacts/tail_output.txt
+   853	  3133	 18094	total
