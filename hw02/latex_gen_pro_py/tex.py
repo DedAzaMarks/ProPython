@@ -1,4 +1,24 @@
-def generate_latex_table(data):
+def generate(*latex_code):
+    latex_template_begin = r'''\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+
+\title{ProPython_hw02}
+\author{zibumzibumich }
+\date{March 2024}
+
+\begin{document}
+
+\maketitle
+'''
+    latex_template_end = r'''
+
+\end{document}
+'''
+    return latex_template_begin+'\n\n'.join(latex_code)+latex_template_end
+    
+
+
+def table(data):
     def format_cell(cell):
         return str(cell).\
             replace('&', r'\&').\
@@ -18,3 +38,14 @@ def generate_latex_table(data):
     latex_table += '\n\\hline\\end{tabular}'
     
     return latex_table
+
+
+def image(png_path):
+    return r'''
+    \begin{figure}[h!]
+    \centering
+    \includegraphics{'''+ png_path + r'''}
+    \caption{My Image}
+    \label{fig:my_image}
+    \end{figure}
+    '''
